@@ -6,5 +6,6 @@
 </head>
 <body>
     <h1>First Laraval Project</h1>
+    <a href="/admin">Admin dash</a>
 </body>
 </html>
