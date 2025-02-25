@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\NinjaController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -28,3 +29,7 @@ Route::get('/admin/{id}' , function ($id) {
     // fetch record with id
     return view('admin.show' , [ "id" => $id]);
 });
+
+
+// fetch record from ninja controller
+Route::get('/ninjas' , [NinjaController::class , 'index']); // func name
