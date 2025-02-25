@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $this->call([
+            DojoSeeder::class, // Add this before ninja because ninja need dojo_id as a foreign key
             NinjaSeeder::class,
         ]);
     }
