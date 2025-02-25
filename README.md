@@ -20,3 +20,6 @@
 
 - to access php(laravel) in shell
 ```php artisan tinker```
+
+- to drop all tables and get a fresh start
+```php artisan migrate:fresh --seed```
