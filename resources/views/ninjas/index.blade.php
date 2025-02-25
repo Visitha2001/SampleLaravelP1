@@ -28,5 +28,8 @@
                 </li>
             @endforeach
         </ul>
+
+        {{--  paginate the results of ninjas  --}}
+        {{ $ninjas->links() }}
     </div>
 </x-layout>
