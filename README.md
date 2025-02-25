@@ -8,11 +8,15 @@
 </p>
 
 ## commands
+
 - to create migration tables
-``` php artisan migrate```
+```sh php artisan migrate```
 
 - to drop migration table
-``` php artisan migrate:rollback```
+```sh php artisan migrate:rollback```
 
 - to make models with artisan
-``` php artisan make:model Ninja -mfs```
+```sh php artisan make:model Ninja -mfs```
+
+- to access php(laravel) in shell
+```php artisan tinker```
