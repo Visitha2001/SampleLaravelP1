@@ -11,8 +11,8 @@
         <header>
             <nav>
                 <h2>hello world</h2>
-                <a href="/admin">Admin</a>
-                <a href="/user/create">Add a new user</a>
+                <a href="{{ route('ninjas.index') }}">All Ninjas</a>
+                <a href="{{ route('ninjas.create') }}">Add a Ninja</a>
             </nav>
         </header>
 

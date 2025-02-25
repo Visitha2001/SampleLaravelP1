@@ -31,10 +31,11 @@ Route::get('/', function () {
 // });
 
 
-// fetch record from ninja controller
-Route::get('/ninjas' , [NinjaController::class , 'index']); // func name
+// fetch record from ninja controller                // controller function name
+//                                                               |
+Route::get('/ninjas' , [NinjaController::class , 'index'])->name('ninjas.index'); // names routes
 
-Route::get('/ninjas/{id}' , [NinjaController::class , 'show']);
+Route::get('/ninjas/{id}' , [NinjaController::class , 'show'])->name('ninjas.show');
 
-Route::get('/ninjas/create' , [NinjaController::class , 'create']);
+Route::get('/ninjas/create' , [NinjaController::class , 'create'])->name('ninjas.create');
 
