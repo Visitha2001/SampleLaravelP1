@@ -70,3 +70,6 @@ to create migration tables
 
 to drop migration table
 ```sh php artisan migrate:rollback```
+
+to make models with artisan
+```sh php artisan make:model Ninja -mfs```
