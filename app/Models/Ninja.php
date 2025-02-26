@@ -10,4 +10,10 @@ class Ninja extends Model
     protected $fillable = ['name', 'skill' , 'bio'];
     /** @use HasFactory<\Database\Factories\NinjaFactory> */
     use HasFactory;
+
+    // Define the relationship to the Dojo model
+    public function dojo()
+    {
+        return $this->belongsTo(Dojo::class);
+    }
 }
