@@ -31,15 +31,14 @@ Route::get('/', function () {
 // });
 
 
-// fetch record from ninja controller                // controller function name
-//                                                             |
-
-
-
+// fetch record from ninja controller     // controller function name
+//                                                   |
 Route::prefix('/')->group(function () {
     Route::get('/ninjas', [NinjaController::class, 'index'])->name('ninjas.index'); // names routes
 
     Route::get('/ninjas/{id}', [NinjaController::class, 'show'])->name('ninjas.show');
 
     Route::get('/add', [NinjaController::class, 'add'])->name('ninjas.add');
+
+    Route::post('/ninjas' , [NinjaController::class, 'store'])->name('ninjas.store');
 });
