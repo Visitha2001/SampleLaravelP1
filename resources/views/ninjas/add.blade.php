@@ -3,7 +3,7 @@
         <h2 class="text-2xl font-bold mb-6 text-center">Create Ninja</h2>
 
         {{-- Create add ninja form here --}}
-        <form action="" class="form space-y-6" method="">
+        <form action="{{ route('ninjas.store') }}" class="form space-y-6" method="POST">
             @csrf
             <div class="form-group">
                 <label for="name" class="block text-lg font-semibold text-gray-700 mb-2">Name:</label>
@@ -30,7 +30,7 @@
                     {{-- Options should be populated here --}}
                     <option value="" disabled selected>Select a Dojo</option>
                     @foreach ($dojos as $dojo)
-                        <option value="{{ $dojo->id }}">{{ $dojo->name }}</option>
+                        <option value="{{ $dojo->id }}">{{ $dojo->name }} --> {{ $dojo->id }}</option>
                     @endforeach
                 </select>
             </div>

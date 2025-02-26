@@ -4,6 +4,8 @@
             <hr/>
             <h2>User id : {{ $ninja->id }}</h2>
             <h2>User name : {{ $ninja->name }}</h2>
+            <h2>User skill : {{ $ninja->skill }}</h2>
+            <h2>User bio : {{ $ninja->bio }}</h2>
         </div>
 
         <div class="container bg-gray-200 p-10">
