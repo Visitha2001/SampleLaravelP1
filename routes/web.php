@@ -32,10 +32,14 @@ Route::get('/', function () {
 
 
 // fetch record from ninja controller                // controller function name
-//                                                               |
-Route::get('/ninjas' , [NinjaController::class , 'index'])->name('ninjas.index'); // names routes
+//                                                             |
 
-Route::get('/ninjas/{id}' , [NinjaController::class , 'show'])->name('ninjas.show');
 
-Route::get('/ninjas/create' , [NinjaController::class , 'create'])->name('ninjas.create');
 
+Route::prefix('/')->group(function () {
+    Route::get('/ninjas', [NinjaController::class, 'index'])->name('ninjas.index'); // names routes
+
+    Route::get('/ninjas/{id}', [NinjaController::class, 'show'])->name('ninjas.show');
+
+    Route::get('/add', [NinjaController::class, 'add'])->name('ninjas.add');
+});
