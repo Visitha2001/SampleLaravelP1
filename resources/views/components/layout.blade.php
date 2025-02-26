@@ -8,15 +8,17 @@
         @vite('resources/css/app.css')
     </head>
     <body>
-        <header>
-            <nav>
-                <h2>hello world</h2>
-                <a href="{{ route('ninjas.index') }}">All Ninjas</a>
-                <a href="{{ route('ninjas.create') }}">Add a Ninja</a>
+        <header class="bg-indigo-600 text-white">
+            <nav class="container mx-auto flex justify-between items-center p-4">
+                <h2 class="text-2xl font-bold">Hello World</h2>
+                <div class="space-x-4">
+                    <a href="{{ route('ninjas.index') }}" class="hover:text-indigo-200">All Ninjas</a>
+                    <a href="{{ route('ninjas.add') }}" class="hover:text-indigo-200">Add a Ninja</a>
+                </div>
             </nav>
         </header>
 
-        <main class="container">
+        <main class="container mx-auto p-4">
             {{ $slot }}
         </main>
     </body>

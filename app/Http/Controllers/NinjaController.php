@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Ninja;
+use App\Models\Dojo;
 use Illuminate\Http\Request;
 
 class NinjaController extends Controller
@@ -23,9 +24,12 @@ class NinjaController extends Controller
         return view('ninjas.show', ['ninja' => $ninja]);
     }
 
-    public function create()
+    public function add()
     {
-        return view('ninjas.create');
+        $dojos = Dojo::all();
+
+        // route --> /add
+        return view('ninjas.add' , ['dojos' => $dojos]);
     }
 
     // public function store()
