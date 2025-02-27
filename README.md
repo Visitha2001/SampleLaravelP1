@@ -29,3 +29,6 @@
 
 - to start project with tailwind
 ```npm run dev```
+
+- to clear cache/routes/compile
+```php artisan optimize:clear```
