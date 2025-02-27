@@ -56,8 +56,11 @@ class NinjaController extends Controller
     //     return redirect()->route('ninja.show', ['id' => $id]);
     // }
 
-    // public function destroy($id)
-    // {
-    //     return redirect()->route('ninja.index');
-    // }
+    public function destroy($id)
+    {
+        // route --> /ninjas/{id} (DELETE)
+        $ninja = Ninja::findOrFail($id);
+        $ninja->delete();
+        return redirect()->route('ninjas.index');
+    }
 }
