@@ -21,11 +21,11 @@
 
         {{--  for each directive  --}}
         <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            @foreach ( $ninjas as $ninja )
+            @foreach ($ninjas as $ninja)
                 <li>
                     <x-card href="{{ route('ninjas.show', $ninja->id) }}" :highlight="$ninja['skill'] > 50" class="p-4 bg-white shadow-lg rounded-lg">
                         <h3 class="text-xl font-semibold mb-2">{{ $ninja->name }}</h3>
-                        <p class="text-gray-600">Dojo: {{ $ninja->dojo->name }}</p>
+                        <p class="text-gray-600 mb-4">Dojo: {{ $ninja->dojo->name }}</p>
                     </x-card>
                 </li>
             @endforeach
