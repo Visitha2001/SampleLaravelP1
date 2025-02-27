@@ -41,4 +41,6 @@ Route::prefix('/')->group(function () {
     Route::get('/add', [NinjaController::class, 'add'])->name('ninjas.add');
 
     Route::post('/ninjas' , [NinjaController::class, 'store'])->name('ninjas.store');
+
+    Route::delete('/ninjas/{id}', [NinjaController::class, 'destroy'])->name('ninjas.destroy');
 });
