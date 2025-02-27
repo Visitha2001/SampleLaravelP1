@@ -8,6 +8,12 @@
         @vite('resources/css/app.css')
     </head>
     <body>
+        @if(session('success'))
+            <div class="bg-green-200 text-green-800 p-4">
+                {{ session('success') }}
+            </div>
+        @endif
+
         <header class="bg-indigo-600 text-white">
             <nav class="container mx-auto flex justify-between items-center p-4">
                 <h2 class="text-2xl font-bold">Hello World</h2>
