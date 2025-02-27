@@ -5,22 +5,36 @@
         {{-- Create add ninja form here --}}
         <form action="{{ route('ninjas.store') }}" class="form space-y-6" method="POST">
             @csrf
+            {{--  validate errors  --}}
+            @if ($errors->any())
+                <div class="text-red-700 text-sm bg-red-200 p-2 mt-2">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <div class="form-group">
                 <label for="name" class="block text-lg font-semibold text-gray-700 mb-2">Name:</label>
                 <input type="text" name="name" id="name" required
+                    value="{{ old('name') }}"
                     class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
             </div>
 
             <div class="form-group">
                 <label for="skill" class="block text-lg font-semibold text-gray-700 mb-2">Skill:</label>
                 <input type="text" name="skill" id="skill" required
+                    value="{{ old('skill') }}"
                     class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
             </div>
 
             <div class="form-group">
                 <label for="bio" class="block text-lg font-semibold text-gray-700 mb-2">Biography:</label>
                 <textarea name="bio" id="bio" required
-                    class="w-full h-32 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+                    class="w-full h-32 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    {{ old('bio') }}
+                </textarea>
             </div>
 
             <div class="form-group">
