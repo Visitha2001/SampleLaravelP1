@@ -48,7 +48,7 @@
                         @csrf
                     </form>
                 @else
-                    <a href="{{ route('show.login') }}" class="text-lg font-medium text-indigo-200 hover:text-indigo-400 transition">Login</a>
+                    <a href="{{ route('login') }}" class="text-lg font-medium text-indigo-200 hover:text-indigo-400 transition">Login</a>
                     <a href="{{ route('show.register') }}" class="ml-4 text-lg font-medium text-indigo-200 hover:text-indigo-400 transition">Register</a>
                 @endauth
             </div>
