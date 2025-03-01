@@ -18,6 +18,7 @@ class AuthController extends Controller
         $remember = $request->has('remember_me') ? true : false;
         // Attempt login with "remember me" functionality
         if(Auth::attempt($validated, $remember)){
+            $request->session()->regenerate();
             return redirect()->route('ninjas.index')->with('success', 'Login successful!');
         }
         return back()->with('error', 'Invalid credentials!');
@@ -46,6 +47,6 @@ class AuthController extends Controller
 
     public function logout(){
         Auth::logout();
-        return redirect()->route('show.login')->with('success', 'Logout successful!');
+        return redirect()->route('login')->with('success', 'Logout successful!');
     }
 }
