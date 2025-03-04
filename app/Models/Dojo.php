@@ -15,4 +15,9 @@ class Dojo extends Model
     public function ninjas(){
         return $this->hasMany(Ninja::class);
     }
+
+    // relationships with vehicles
+    public function vehicles(){
+        return $this->hasMany(Vehicle::class);
+    }
 }

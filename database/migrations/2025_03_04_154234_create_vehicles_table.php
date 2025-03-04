@@ -11,12 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('ninjas', function (Blueprint $table) {
+        Schema::create('vehicles', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('name');
-            $table->integer('skill');
-            $table->text('bio');
+            $table->string('make');
+            $table->string('model');
+            $table->integer('year');
+            $table->string('color');
+            $table->integer('weight');
             $table->foreignId('dojo_id')->constrained()->onDelete('cascade'); // delete all recodes when delete the dojo
         });
     }
@@ -26,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('ninjas');
+        Schema::dropIfExists('vehicles');
     }
 };
