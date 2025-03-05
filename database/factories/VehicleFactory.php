@@ -22,7 +22,7 @@ class VehicleFactory extends Factory
             'model' => fake()->word(),
             'year' => fake()->year(),
             'color' => fake()->colorName(),
-            'weight' => fake()->weight(),
+            'weight' => fake()->numberBetween(1 , 1000),
             'dojo_id' => Dojo::inRandomOrder()->first()->id,
         ];
     }
