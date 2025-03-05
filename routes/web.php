@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NinjaController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\VehicleController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -39,7 +40,7 @@ Route::prefix('/')->group(function () {
     Route::get('/ninjas/{ninja}', [NinjaController::class, 'show'])->name('ninjas.show');
     Route::get('/add', [NinjaController::class, 'add'])->name('ninjas.add')->middleware('auth');
     Route::post('/ninjas' , [NinjaController::class, 'store'])->name('ninjas.store');
-    Route::delete('/ninjas/{ninja}', [NinjaController::class, 'destroy'])->name('ninjas.destroy');
+    Route::delete('/ninjas/{ninja}', [NinjaController::class, 'destroy'])->name('ninjas.destroy')->middleware('auth');
 });
 
 Route::prefix('/auth')->group(function () {
@@ -48,4 +49,14 @@ Route::prefix('/auth')->group(function () {
     Route::get('/register', [AuthController::class, 'showRegister'])->name('show.register');
     Route::post('/register', [AuthController::class, 'register'])->name('auth.register');
     Route::post('/logout', [AuthController::class, 'logout'])->name('auth.logout');
+});
+
+Route::prefix('/vehicles')->group( function() {
+    Route::get('/' , [VehicleController::class, 'index'])->name('vehicles.index');
+    Route::get('/create' , [VehicleController::class, 'create'])->name('vehicles.create')->middleware('auth');
+    Route::post('/' , [VehicleController::class, 'store'])->name('vehicles.store');
+    Route::get('/{vehicle}' , [VehicleController::class, 'show'])->name('vehicles.show');
+    Route::get('/{vehicle}/edit' , [VehicleController::class, 'edit'])->name('vehicles.edit')->middleware('auth');
+    Route::put('/{vehicle}' , [VehicleController::class, 'update'])->name('vehicles.update');
+    Route::delete('/{vehicle}' , [VehicleController::class, 'destroy'])->name('vehicles.destroy')->middleware('auth');
 });

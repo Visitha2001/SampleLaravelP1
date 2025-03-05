@@ -23,3 +23,6 @@
 
 - to drop all tables and get a fresh start
 ```php artisan migrate:fresh --seed```
+
+- to run a specific seeder for add some fake data
+```php artisan db:seed --class=SeederClassName```
