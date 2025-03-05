@@ -10,10 +10,10 @@
 ## commands
 
 - to create migration tables
-```sh php artisan migrate```
+```php artisan migrate```
 
 - to drop migration table
-```sh php artisan migrate:rollback```
+```php artisan migrate:rollback```
 
 - to make models with artisan
 ```sh php artisan make:model Ninja -mfs```
@@ -23,6 +23,15 @@
 
 - to drop all tables and get a fresh start
 ```php artisan migrate:fresh --seed```
+
+- to start project
+```php artisan serve```
+
+- to start project with tailwind
+```npm run dev```
+
+- to clear cache/routes/compile
+```php artisan optimize:clear```
 
 - to run a specific seeder for add some fake data
 ```php artisan db:seed --class=SeederClassName```
