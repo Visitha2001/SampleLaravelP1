@@ -32,3 +32,6 @@
 
 - to clear cache/routes/compile
 ```php artisan optimize:clear```
+
+- to run a specific seeder for add some fake data
+```php artisan db:seed --class=SeederClassName```
