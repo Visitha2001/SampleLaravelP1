@@ -33,6 +33,8 @@
             <div class="hidden md:flex space-x-6">
                 <a href="{{ route('ninjas.index') }}" class="text-lg font-medium hover:text-indigo-300 transition">All Ninjas</a>
                 <a href="{{ route('ninjas.add') }}" class="text-lg font-medium hover:text-indigo-300 transition">Add a Ninja</a>
+                <a href="{{ route('vehicles.index') }}" class="text-lg font-medium hover:text-indigo-300 transition">All Vehicles</a>
+                <a href="{{ route('vehicles.create') }}" class="text-lg font-medium hover:text-indigo-300 transition">Add a Vehicle</a>
             </div>
             <div>
                 @auth
